@@ -1,0 +1,10 @@
+{
+  "docs": {
+    "IBM Cloud": ["doc1"],
+    "Node.js": ["doc2"],
+    "React Native": ["doc3"]
+  },
+  "docs-other": {
+    "First Category": ["doc4", "doc5"]
+  }
+}
