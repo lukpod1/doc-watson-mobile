@@ -18,7 +18,7 @@ O Assistant é alimentado pelo Machine Learning e Processamento de Linguagem Nat
 
 Para construir um chatbot utilizando a API do Watson, é necessário acessar a página da IBM Cloud, cadastrar na plataforma e logar:
 
-![ibmcloud-image1]()
+![ibmcloud](https://user-images.githubusercontent.com/30981427/58377479-ffae3500-7f57-11e9-8070-2b2ef23efaba.png)
 
 Quando efetuar o login você será levado para a página inicial da plataforma: 
 
