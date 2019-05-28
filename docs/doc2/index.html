@@ -1,0 +1,219 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Construindo o servidor Node · Watson Mobile</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;h2&gt;&lt;a class=&quot;anchor&quot; aria-hidden=&quot;true&quot; id=&quot;nodejs&quot;&gt;&lt;/a&gt;&lt;a href=&quot;#nodejs&quot; aria-hidden=&quot;true&quot; class=&quot;hash-link&quot;&gt;&lt;svg class=&quot;hash-link-icon&quot; aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Node.js&lt;/h2&gt;
+"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Construindo o servidor Node · Watson Mobile"/><meta property="og:type" content="website"/><meta property="og:url" content="https://lukpod1.github.io/doc-watson-mobile/"/><meta property="og:description" content="&lt;h2&gt;&lt;a class=&quot;anchor&quot; aria-hidden=&quot;true&quot; id=&quot;nodejs&quot;&gt;&lt;/a&gt;&lt;a href=&quot;#nodejs&quot; aria-hidden=&quot;true&quot; class=&quot;hash-link&quot;&gt;&lt;svg class=&quot;hash-link-icon&quot; aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Node.js&lt;/h2&gt;
+"/><meta property="og:image" content="https://lukpod1.github.io/doc-watson-mobile/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://lukpod1.github.io/doc-watson-mobile/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/doc-watson-mobile/img/React-icon.svg.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/dark.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><link rel="stylesheet" href="/doc-watson-mobile/css/main.css"/><script src="/doc-watson-mobile/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/doc-watson-mobile/"><img class="logo" src="/doc-watson-mobile/img/React-icon.svg.png" alt="Watson Mobile"/><h2 class="headerTitleWithLogo">Watson Mobile</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/doc-watson-mobile/docs/intro" target="_self">Docs</a></li><li class=""><a href="/doc-watson-mobile/docs/doc4" target="_self">About</a></li><li class=""><a href="/doc-watson-mobile/help" target="_self">Help</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Node.js</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Introdução</h3><ul class=""><li class="navListItem"><a class="navItem" href="/doc-watson-mobile/docs/intro">Introdução</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">IBM Cloud</h3><ul class=""><li class="navListItem"><a class="navItem" href="/doc-watson-mobile/docs/doc1">Criando um Chatbot</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Node.js</h3><ul class=""><li class="navListItem navListItemActive"><a class="navItem" href="/doc-watson-mobile/docs/doc2">Configuração Nodejs</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">React Native</h3><ul class=""><li class="navListItem"><a class="navItem" href="/doc-watson-mobile/docs/doc3">Montando o ambiente de desenvolvimento</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Construindo o servidor Node</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="nodejs"></a><a href="#nodejs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Node.js</h2>
+<p>O Node.js é uma plataforma construída sobre o motor JavaScript do Google Chrome para facilmente construir aplicações de rede rápidas e escaláveis. Node.js usa um modelo de I/O direcionada a evento não bloqueante que o torna leve e eficiente, ideal para aplicações em tempo real com troca intensa de dados através de dispositivos distribuídos.</p>
+<h2><a class="anchor" aria-hidden="true" id="instalacão"></a><a href="#instalacão" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Instalação</h2>
+<p>Para instalar o node.js basta acessar: <a href="https://nodejs.org">Node.js</a>. Caso seu SO seja Linux siga os proximos passos.</p>
+<ol>
+<li>Descompacte o arquivo binário em qualquer diretório que você queira instalar o Node,
+eu uso  <code>/ usr / local / lib / nodejs</code></li>
+</ol>
+<pre><code class="hljs">VERSION=v10.<span class="hljs-number">15.0</span>
+DISTRO=linux-x64
+sudo mkdir -p /usr/local/<span class="hljs-class"><span class="hljs-keyword">lib</span>/<span class="hljs-title">nodejs</span></span>
+sudo tar -xJvf node-$VERSION-$DISTRO.tar.xz -C /usr/local/<span class="hljs-class"><span class="hljs-keyword">lib</span>/<span class="hljs-title">nodejs</span> </span>
+</code></pre>
+<ol start="2">
+<li>Defina a variável de ambiente <code>~ / .profile</code>, adicione abaixo ao final</li>
+</ol>
+<pre><code class="hljs"><span class="hljs-comment"># Nodejs</span>
+<span class="hljs-attribute">VERSION</span>=v10.15.0
+<span class="hljs-attribute">DISTRO</span>=linux-x64
+<span class="hljs-builtin-name">export</span> <span class="hljs-attribute">PATH</span>=/usr/local/lib/nodejs/node-$VERSION-$DISTRO/bin:$PATH
+</code></pre>
+<ol start="3">
+<li>Atualizar perfil</li>
+</ol>
+<pre><code class="hljs">. ~/<span class="hljs-selector-class">.profile</span>
+</code></pre>
+<ol start="4">
+<li>Testando a instalação</li>
+</ol>
+<pre><code class="hljs">$ <span class="hljs-keyword">node</span> <span class="hljs-title">-v</span>
+</code></pre>
+<pre><code class="hljs">$ <span class="hljs-built_in">npm</span> -v
+</code></pre>
+<p>saída no terminal</p>
+<pre><code class="hljs">$ <span class="hljs-keyword">node</span> <span class="hljs-title">-v</span>
+v10.<span class="hljs-number">15.3</span>
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="setup-inicial-do-projeto"></a><a href="#setup-inicial-do-projeto" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Setup inicial do projeto</h2>
+<p>Para montarmos nossa API, iremos utilizar três pacotes do NPM:</p>
+<h3><a class="anchor" aria-hidden="true" id="1-express"></a><a href="#1-express" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>1-Express</h3>
+<p>Que será utilizado para montarmos nosso servidor HTTP e manipular as requisições do usuário.</p>
+<h3><a class="anchor" aria-hidden="true" id="2-ibm-watson"></a><a href="#2-ibm-watson" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2-IBM-Watson</h3>
+<p>Que é a biblioteca responsável por acessar os serviços do IBM Watson utilizando Node.js.</p>
+<h3><a class="anchor" aria-hidden="true" id="3-body-parser"></a><a href="#3-body-parser" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>3-Body Parser</h3>
+<p>Para fazer o parse do corpo das requisições.</p>
+<p>Agora que já sabemos quais pacotes iremos utilizar, podemos criar nosso projeto e instalar nossos pacotes.</p>
+<p>No seu terminal execute:</p>
+<pre><code class="hljs"><span class="hljs-attr">mkdir</span> <span class="hljs-string">server-chatbot</span>
+<span class="hljs-attr">cd</span> <span class="hljs-string">server-chatbot</span>
+<span class="hljs-attr">npm</span> <span class="hljs-string">init</span>
+<span class="hljs-attr">npm</span> <span class="hljs-string">install --save express ibm-watson body-parser</span>
+</code></pre>
+<p>Pronto, temos todas as nossas dependências. Let’s code!!</p>
+<p><img src="https://user-images.githubusercontent.com/30981427/58449506-2d26ea00-80e2-11e9-83b1-b7d4a2830dc7.gif" alt="giphy"></p>
+<h2><a class="anchor" aria-hidden="true" id="criando-o-servidor"></a><a href="#criando-o-servidor" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Criando o servidor</h2>
+<p>Dentro da pasta do projeto, vamos criar o arquivo app.js, nele vamos configurar o nosso servidor e uma rota que será responsável por capturar a mensagem do usuário.</p>
+<pre><code class="hljs"><span class="hljs-keyword">const</span> express = <span class="hljs-built_in">require</span>(<span class="hljs-string">'express'</span>);
+<span class="hljs-keyword">const</span> bodyParser = <span class="hljs-built_in">require</span>(<span class="hljs-string">'body-parser'</span>);
+
+<span class="hljs-keyword">const</span> app = express();
+app.use(bodyParser.json());
+
+<span class="hljs-keyword">const</span> port = <span class="hljs-number">3000</span>;
+
+app.get(<span class="hljs-string">'/conversation/:text*?'</span>, <span class="hljs-function">(<span class="hljs-params">req, res</span>) =&gt;</span> {
+  <span class="hljs-keyword">const</span> { text } = req.params;
+
+  res.json(text);
+});
+
+app.listen(port, <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Running on port <span class="hljs-subst">${port}</span>`</span>));
+</code></pre>
+<p>Ok, agora que temos nossa aplicação, podemos ver ela em ação, vá até sua linha de comando e execute <code>node app.js</code> após isso acesse seu browser na url <a href="http://localhost:3000/conversation/mensagem">http://localhost:3000/conversation/mensagem</a> para ver se está tudo conforme o esperado.</p>
+<p>Esse é o básico da nossa API, o intuito dela é pegar a mensagem que o usuário enviar e mandá-la para o Watson, assim que o Watson tiver alguma resposta a retornamos para o usuário.</p>
+<h2><a class="anchor" aria-hidden="true" id="credencias"></a><a href="#credencias" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Credencias</h2>
+<p>Antes de finalizarmos a API precisamos pegar as credenciais de serviço no IBM Cloud, que serão responsáveis por fazer a autenticação do nossa aplicação com o serviço da IBM.</p>
+<p>Na página de serviços existentes selecione o serviço do Watson Assistant.</p>
+<p>Na tela de , você precisará do ID do workspace que está configurado o diálogo do seu bot.</p>
+<p><img src="https://user-images.githubusercontent.com/30981427/58450151-15e8fc00-80e4-11e9-8675-ce17173ae514.png" alt="image"></p>
+<p>Na tela de Skills, você precisará do ID do workspace que está configurado o diálogo do seu bot.</p>
+<p><img src="https://user-images.githubusercontent.com/30981427/58450319-cb1bb400-80e4-11e9-97d7-d26bf44d2ddd.png" alt="image"></p>
+<p>Pronto, agora com todas as chaves anotadas podemos finalizar nossa API.</p>
+<h2><a class="anchor" aria-hidden="true" id="finalizando-a-api"></a><a href="#finalizando-a-api" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Finalizando a API</h2>
+<p>Pronto, temos tudo que é fundamental para terminar nossa API.</p>
+<p>Vamos importar a nossa biblioteca e configurá-la</p>
+<pre><code class="hljs"><span class="hljs-keyword">const</span> AssistantV1 = <span class="hljs-built_in">require</span>(<span class="hljs-string">'ibm-watson/assistant/v1'</span>);
+...
+<span class="hljs-keyword">const</span> assistant = <span class="hljs-keyword">new</span> AssistantV1({
+  version: <span class="hljs-string">'2019-02-28'</span>,
+  iam_apikey: <span class="hljs-string">'sua api key'</span>,
+  url: <span class="hljs-string">'https://gateway.watsonplatform.net/assistant/api'</span>
+});
+</code></pre>
+<p>Após isso, dentro da nossa rota, precisamos enviar a mensagem que será recebida para o Watson e retornar a resposta para o usuário.</p>
+<p>Só um detalhe, o Watson trabalha com contexto para localizar qual o estado de cada conversa, então é necessário que você passe pra ele o contexto específico de cada conversa durante as requisições.</p>
+<p>Emtão, precisamos alterar o tipo de requisição para post para conseguir passar todas as informações no corpo da requisição.</p>
+<pre><code class="hljs">...
+app.post(<span class="hljs-string">'/conversation/'</span>, <span class="hljs-function"><span class="hljs-params">(req, res)</span> =&gt;</span> {
+  const { text, context = {} } = req.body;
+
+  const params = {
+    input: { text },
+    workspace_id: <span class="hljs-string">'&lt;workspace_id&gt;'</span>,
+    context,
+  };
+
+assistant.message(params, <span class="hljs-function"><span class="hljs-params">(err, response)</span> =&gt;</span> {
+    <span class="hljs-keyword">if</span> (err) res.status(<span class="hljs-number">500</span>).json(err);
+    res.json(response);
+  });
+});
+...
+</code></pre>
+<p>Nosso arquivo final irá ficar assim:</p>
+<pre><code class="hljs"><span class="hljs-keyword">const</span> AssistantV1 = <span class="hljs-built_in">require</span>(<span class="hljs-string">'ibm-watson/assistant/v1'</span>);
+<span class="hljs-keyword">const</span> express = <span class="hljs-built_in">require</span>(<span class="hljs-string">'express'</span>);
+<span class="hljs-keyword">const</span> bodyParser = <span class="hljs-built_in">require</span>(<span class="hljs-string">'body-parser'</span>);
+
+<span class="hljs-keyword">const</span> app = express();
+
+app.use(bodyParser.json());
+
+<span class="hljs-keyword">const</span> port = <span class="hljs-number">3000</span>;
+
+<span class="hljs-keyword">const</span> assistant = <span class="hljs-keyword">new</span> AssistantV1({
+  username: <span class="hljs-string">'&lt;username&gt;'</span>,
+  password: <span class="hljs-string">'&lt;password&gt;'</span>,
+  url: <span class="hljs-string">'https://gateway.watsonplatform.net/assistant/api/'</span>,
+  version: <span class="hljs-string">'2018-02-16'</span>,
+});
+
+app.post(<span class="hljs-string">'/conversation/'</span>, <span class="hljs-function">(<span class="hljs-params">req, res</span>) =&gt;</span> {
+  <span class="hljs-keyword">const</span> { text, context = {} } = req.body;
+
+  <span class="hljs-keyword">const</span> params = {
+    input: { text },
+    workspace_id:<span class="hljs-string">'&lt;workspace_id&gt;'</span>,
+    context,
+  };
+
+  assistant.message(params, <span class="hljs-function">(<span class="hljs-params">err, response</span>) =&gt;</span> {
+    <span class="hljs-keyword">if</span> (err) {
+      <span class="hljs-built_in">console</span>.error(err);
+      res.status(<span class="hljs-number">500</span>).json(err);
+    } <span class="hljs-keyword">else</span> {
+      res.json(response);
+    }
+  });
+});
+
+app.listen(port, <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Running on port <span class="hljs-subst">${port}</span>`</span>));
+</code></pre>
+<p>Agora basta reiniciar nosso servidor e enviar uma requisição via post para <a href="http://localhost:3000/conversation/">http://localhost:3000/conversation/</a> com um JSON neste formato:</p>
+<pre><code class="hljs">{
+    <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Olá"</span>,
+    <span class="hljs-attr">"context"</span> : {
+        
+    }
+}
+</code></pre>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/doc-watson-mobile/docs/doc1"><span class="arrow-prev">← </span><span>Criando um Chatbot</span></a><a class="docs-next button" href="/doc-watson-mobile/docs/doc3"><span>Montando o ambiente de desenvolvimento</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#nodejs">Node.js</a></li><li><a href="#instalacão">Instalação</a></li><li><a href="#setup-inicial-do-projeto">Setup inicial do projeto</a><ul class="toc-headings"><li><a href="#1-express">1-Express</a></li><li><a href="#2-ibm-watson">2-IBM-Watson</a></li><li><a href="#3-body-parser">3-Body Parser</a></li></ul></li><li><a href="#criando-o-servidor">Criando o servidor</a></li><li><a href="#credencias">Credencias</a></li><li><a href="#finalizando-a-api">Finalizando a API</a></li></ul></nav></div><footer class="nav-footer center" id="footer"><section class="sitemap"><div><h5>Docs</h5><a href="/doc-watson-mobile/docs/en/doc1.html">IBM Cloud + Watson Assistant</a><a href="/doc-watson-mobile/docs/en/doc2.html">Node.js</a><a href="/doc-watson-mobile/docs/en/doc3.html">React Native</a></div><div><h5>More</h5><a href="https://github.com/lukpod1/doc-watson-mobile">Código Fonte da Documentação</a><a href="https://github.com/lukpod1/server-watson">Código Fonte do Server Node</a><a href="https://github.com/lukpod1/watson-mobile">Código Fonte da Aplicação Mobile</a></div></section><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/doc-watson-mobile/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2019 José Lucas Alves da Silva</section></footer></div></body></html>

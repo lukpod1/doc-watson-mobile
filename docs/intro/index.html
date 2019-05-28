@@ -1,0 +1,62 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Criando um Chatbot com IBM Watson, Node.js e React Native · Watson Mobile</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;p&gt;Olá pessoal! A ideia desse site é mostrar como criar um chatbot utilizando os serviços do IBM Watson com Node.js e React Native.&lt;/p&gt;
+"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Criando um Chatbot com IBM Watson, Node.js e React Native · Watson Mobile"/><meta property="og:type" content="website"/><meta property="og:url" content="https://lukpod1.github.io/doc-watson-mobile/"/><meta property="og:description" content="&lt;p&gt;Olá pessoal! A ideia desse site é mostrar como criar um chatbot utilizando os serviços do IBM Watson com Node.js e React Native.&lt;/p&gt;
+"/><meta property="og:image" content="https://lukpod1.github.io/doc-watson-mobile/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://lukpod1.github.io/doc-watson-mobile/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/doc-watson-mobile/img/React-icon.svg.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/dark.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><link rel="stylesheet" href="/doc-watson-mobile/css/main.css"/><script src="/doc-watson-mobile/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/doc-watson-mobile/"><img class="logo" src="/doc-watson-mobile/img/React-icon.svg.png" alt="Watson Mobile"/><h2 class="headerTitleWithLogo">Watson Mobile</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive siteNavItemActive"><a href="/doc-watson-mobile/docs/intro" target="_self">Docs</a></li><li class=""><a href="/doc-watson-mobile/docs/doc4" target="_self">About</a></li><li class=""><a href="/doc-watson-mobile/help" target="_self">Help</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Introdução</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Introdução</h3><ul class=""><li class="navListItem navListItemActive"><a class="navItem" href="/doc-watson-mobile/docs/intro">Introdução</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">IBM Cloud</h3><ul class=""><li class="navListItem"><a class="navItem" href="/doc-watson-mobile/docs/doc1">Criando um Chatbot</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Node.js</h3><ul class=""><li class="navListItem"><a class="navItem" href="/doc-watson-mobile/docs/doc2">Configuração Nodejs</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">React Native</h3><ul class=""><li class="navListItem"><a class="navItem" href="/doc-watson-mobile/docs/doc3">Montando o ambiente de desenvolvimento</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Criando um Chatbot com IBM Watson, Node.js e React Native</h1></header><article><div><span><p>Olá pessoal! A ideia desse site é mostrar como criar um chatbot utilizando os serviços do IBM Watson com Node.js e React Native.</p>
+<h3><a class="anchor" aria-hidden="true" id="divisão-da-aplicacão"></a><a href="#divisão-da-aplicacão" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Divisão da Aplicação</h3>
+<p>Para não ficar muito grande e confuso dividirei essa sessão em três partes: a primeira mostrando como se cadastrar na plataforma da IBM Cloud e acessar o serviço do Watson Assistant, a segunda mostrando como criar a API que será responsável por fazer a comunicação entre o Watson e o usuário, e a terceira parte será sobre como montar a aplicação mobile do nosso chat com React Native. Espero que gostem.</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-next button" href="/doc-watson-mobile/docs/doc1"><span>Criando um Chatbot</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"></nav></div><footer class="nav-footer center" id="footer"><section class="sitemap"><div><h5>Docs</h5><a href="/doc-watson-mobile/docs/en/doc1.html">IBM Cloud + Watson Assistant</a><a href="/doc-watson-mobile/docs/en/doc2.html">Node.js</a><a href="/doc-watson-mobile/docs/en/doc3.html">React Native</a></div><div><h5>More</h5><a href="https://github.com/lukpod1/doc-watson-mobile">Código Fonte da Documentação</a><a href="https://github.com/lukpod1/server-watson">Código Fonte do Server Node</a><a href="https://github.com/lukpod1/watson-mobile">Código Fonte da Aplicação Mobile</a></div></section><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/doc-watson-mobile/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2019 José Lucas Alves da Silva</section></footer></div></body></html>
