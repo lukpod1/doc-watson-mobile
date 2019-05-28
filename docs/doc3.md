@@ -85,3 +85,6 @@ Digite source ```$HOME/.bash_profile``` para carregar a configuração no seu sh
 
 > Por favor, certifique-se de usar o caminho correto do Android SDK. Você pode encontrar a localização real do SDK na caixa de diálogo "Preferências" do Android Studio, em Aparência e comportamento → Configurações do sistema → SDK do Android .
 
+### Aplicação com NodeJs + React Native
+
+![image](https://user-images.githubusercontent.com/30981427/58474966-06d56e80-8123-11e9-930f-4299b626eb3f.png)
