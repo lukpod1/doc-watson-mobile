@@ -41,7 +41,7 @@ const siteConfig = {
     {doc: 'intro', label: 'Docs'},
     {doc: 'doc4', label: 'API'},
     {page: 'help', label: 'Help'},
-    {blog: true, label: 'Blog'},
+    // {blog: true, label: 'Blog'},
   ],
 
   // If you have users set above, you add it here:
@@ -77,7 +77,7 @@ const siteConfig = {
 
   highlight: {
     // Highlight.js theme to use for syntax highlighting in code blocks.
-    theme: 'default',
+    theme: 'dark',
   },
 
   // Add custom scripts here that would be placed in <script> tags.
