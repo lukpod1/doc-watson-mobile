@@ -4,8 +4,6 @@ title: IBM Cloud + Watson Assistant
 sidebar_label: Instalação
 ---
 
-Check the [ibm cloud](https://www.ibm.com/cloud/).
-
 ## IBM Cloud
 
 IBM Cloud é a oferta de nuvem mais recente da IBM. Permite que as organizações e os desenvolvedores criem, implementem e gerencie aplicativos na nuvem de maneira fácil e rápida. O IBM Cloud é uma implementação da Arquitetura de Nuvem Aberta da IBM baseada em Cloud Foundry, uma plataforma como serviço (PaaS) de código aberto. O IBM Cloud oferece serviços em nível empresarial que podem ser facilmente integrados aos seus aplicativos de nuvem sem que seja necessário saber como instalá-los ou configurá-los. Este artigo oferece uma descrição de alto nível sobre o Cloud Foundry e o IBM Cloud e define as características e os serviços que fazem parte do IBM Cloud e que o tornam uma plataforma como serviço muito atraente para o mercado atual.
@@ -22,36 +20,38 @@ Para construir um chatbot utilizando a API do Watson, é necessário acessar a p
 
 Quando efetuar o login você será levado para a página inicial da plataforma: 
 
-![ibmcloud-image2]()
+![image](https://user-images.githubusercontent.com/30981427/58472887-aabc1b80-811d-11e9-9304-73f97e5bc6f9.png)
+
 Para acessar o serviço do assistant, vá no menu catálogo:
-![ibmcloud-image3]()
+![catalogo](https://user-images.githubusercontent.com/30981427/58473055-0e464900-811e-11e9-91ec-e0ef37f24440.png)
 
 Clique no tópico IA:
-![ibmcloud-image4]()
+![ia](https://user-images.githubusercontent.com/30981427/58473104-30d86200-811e-11e9-87b2-879327af6285.png)
 
 Selecione o Watson Assistant:
-![ibmcloud-image5]()
+![watson](https://user-images.githubusercontent.com/30981427/58473150-4a79a980-811e-11e9-9759-17b1fb2bd3b4.png)
 
 Selecione o Plano e clique em Criar:
-![ibmcloud-image6]()
+![image](https://user-images.githubusercontent.com/30981427/58473181-59f8f280-811e-11e9-8a15-bec977fcd326.png)
 
 Gerenciamento de Serviços:
-![ibmcloud-image7]()
+![image](https://user-images.githubusercontent.com/30981427/58473220-7006b300-811e-11e9-8b22-8d547c417213.png)
 
 Clique em Launch Tool e vá para a tela do Watson:
-![ibmcloud-image8]()
+![image](https://user-images.githubusercontent.com/30981427/58473322-ae03d700-811e-11e9-96a6-4ba9c6e2ee11.png)
 
 Intenções
-![ibmcloud-image9]()
+![image](https://user-images.githubusercontent.com/30981427/58473364-c96ee200-811e-11e9-97ef-78cf03358f6c.png)
 
 Entidades
-![ibmcloud-image10]()
+![image](https://user-images.githubusercontent.com/30981427/58473396-dbe91b80-811e-11e9-9258-586896e84374.png)
 
 Dialogo
-![ibmcloud-image11]()
+![image](https://user-images.githubusercontent.com/30981427/58473423-edcabe80-811e-11e9-8d33-02196d072ecd.png)
 
 Console
-![ibmcloud-image12]()
+![image](https://user-images.githubusercontent.com/30981427/58473446-fde29e00-811e-11e9-8c14-b1f3cbcc1afa.png)
+
 
 
 
