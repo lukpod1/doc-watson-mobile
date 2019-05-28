@@ -23,15 +23,15 @@ const users = [
 const siteConfig = {
   title: 'Watson Mobile', // Title for your website.
   tagline: '',
-  url: 'https://your-docusaurus-test-site.com', // Your website URL
-  baseUrl: '/', // Base URL for your project */
+  url: 'https://lukpod1.github.io', // Your website URL
+  baseUrl: '/doc-watson-mobile/', // Base URL for your project */
   // For github.io type URLs, you would set the url and baseUrl like:
   //   url: 'https://facebook.github.io',
   //   baseUrl: '/test-site/',
 
   // Used for publishing and more
-  projectName: 'test-site',
-  organizationName: 'facebook',
+  projectName: 'doc-watson-mobile',
+  organizationName: 'lukpod1',
   // For top-level user or org sites, the organization is still the same.
   // e.g., for the https://JoelMarcey.github.io site, it would be set like...
   //   organizationName: 'JoelMarcey'
@@ -39,7 +39,7 @@ const siteConfig = {
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
     {doc: 'intro', label: 'Docs'},
-    {doc: 'doc4', label: 'API'},
+    {doc: 'doc4', label: 'About'},
     {page: 'help', label: 'Help'},
     // {blog: true, label: 'Blog'},
   ],
@@ -49,7 +49,7 @@ const siteConfig = {
 
   /* path to images for header/footer */
   headerIcon: 'img/React-icon.svg.png',
-  footerIcon: 'img/favicon.ico',
+  footerIcon: 'img/React-icon.svg.png',
   favicon: 'img/React-icon.svg.png',
 
   /* Colors for website */

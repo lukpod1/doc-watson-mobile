@@ -60,13 +60,13 @@ class HomeSplash extends React.Component {
 
     return (
       <SplashContainer>
-        <Logo img_src={`${baseUrl}img/undraw_monitor.svg`} />
+        <Logo img_src={`${baseUrl}img/undraw_messages1_9ah2.svg`} />
         <div className="inner">
           <ProjectTitle siteConfig={siteConfig} />
           <PromoSection>
-            <Button href="#try">IBM Cloud</Button>
-            <Button href={docUrl('doc1.html')}>Node.js</Button>
-            <Button href={docUrl('doc2.html')}>React Native</Button>
+            <Button href={docUrl('doc1.html')}>IBM Cloud</Button>
+            <Button href={docUrl('doc2.html')}>Node.js</Button>
+            <Button href={docUrl('doc3.html')}>React Native</Button>
           </PromoSection>
         </div>
       </SplashContainer>
@@ -96,25 +96,30 @@ class Index extends React.Component {
       <div
         className="productShowcaseSection paddingBottom"
         style={{textAlign: 'center'}}>
-        <h2>Feature Callout</h2>
-        <MarkdownBlock>These are features of this project</MarkdownBlock>
-      </div>
-    );
-
-    const TryOut = () => (
-      <Block id="try">
+        {/* <h1>Ferramentas</h1> */}
+        <Block layout="fourColumn">
         {[
           {
-            content:
-              'To make your landing page more attractive, use illustrations! Check out ' +
-              '[**unDraw**](https://undraw.co/) which provides you with customizable illustrations which are free to use. ' +
-              'The illustrations you see on this page are from unDraw.',
-            image: `${baseUrl}img/undraw_code_review.svg`,
-            imageAlign: 'left',
-            title: 'Wonderful SVG Illustrations',
+            content: 'O Watson Assistant é uma ferramenta da IBM para criar interfaces de conversação em qualquer aplicativo, dispositivo ou canal. ',
+            image: `${baseUrl}img/undraw_chat_1wo5.svg`,
+            imageAlign: 'top',
+            title: 'Watson Assistant',
+          },
+          {
+            content: 'Node.js é um interpretador, com código aberto, de código JavaScript de modo assíncrono e orientado a eventos, focado em migrar a programação do Javascript do lado do cliente para os servidores.',
+            image: `${baseUrl}img/Node.jpg`,
+            imageAlign: 'top',
+            title: 'Node.js',
+          },
+          {
+            content: 'O React Native permite que você crie aplicativos móveis usando apenas JavaScript. Ele usa o mesmo design que o React, permitindo compor uma rica interface de usuário móvel usando componentes declarativos.',
+            image: `${baseUrl}img/undraw_react.svg`,
+            imageAlign: 'top',
+            title: 'React Native',
           },
         ]}
       </Block>
+      </div>
     );
 
     const Description = () => (
@@ -122,88 +127,22 @@ class Index extends React.Component {
         {[
           {
             content:
-              'This is another description of how this project is useful',
-            image: `${baseUrl}img/undraw_note_list.svg`,
+              'Esse projeto foi desenvolvido para automatizar a tarefa de resumir um pedido de pizza, com praticidade e sem burocracia.',
+            image: `${baseUrl}img/undraw_pizza_sharing_wxop.svg`,
             imageAlign: 'right',
-            title: 'Description',
+            title: 'Descrição',
           },
         ]}
       </Block>
     );
-
-    const LearnHow = () => (
-      <Block background="light">
-        {[
-          {
-            content:
-              'Each new Docusaurus project has **randomly-generated** theme colors.',
-            image: `${baseUrl}img/undraw_youtube_tutorial.svg`,
-            imageAlign: 'right',
-            title: 'Randomly Generated Theme Colors',
-          },
-        ]}
-      </Block>
-    );
-
-    const Features = () => (
-      <Block layout="fourColumn">
-        {[
-          {
-            content: 'This is the content of my feature',
-            image: `${baseUrl}img/undraw_react.svg`,
-            imageAlign: 'top',
-            title: 'Feature One',
-          },
-          {
-            content: 'The content of my second feature',
-            image: `${baseUrl}img/undraw_operating_system.svg`,
-            imageAlign: 'top',
-            title: 'Feature Two',
-          },
-        ]}
-      </Block>
-    );
-
-    const Showcase = () => {
-      if ((siteConfig.users || []).length === 0) {
-        return null;
-      }
-
-      const showcase = siteConfig.users
-        .filter(user => user.pinned)
-        .map(user => (
-          <a href={user.infoLink} key={user.infoLink}>
-            <img src={user.image} alt={user.caption} title={user.caption} />
-          </a>
-        ));
-
-      const pageUrl = page => baseUrl + (language ? `${language}/` : '') + page;
-
-      return (
-        <div className="productShowcaseSection paddingBottom">
-          <h2>Who is Using This?</h2>
-          <p>This project is used by all these people</p>
-          <div className="logos">{showcase}</div>
-          <div className="more-users">
-            <a className="button" href={pageUrl('users.html')}>
-              More {siteConfig.title} Users
-            </a>
-          </div>
-        </div>
-      );
-    };
 
     return (
       <div>
         <HomeSplash siteConfig={siteConfig} language={language} />
-        <div className="mainContainer">
-          <Features />
+        
           <FeatureCallout />
-          <LearnHow />
-          <TryOut />
           <Description />
-          <Showcase />
-        </div>
+        
       </div>
     );
   }

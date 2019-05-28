@@ -1,7 +1,7 @@
 ---
 id: doc1
 title: IBM Cloud + Watson Assistant
-sidebar_label: Instalação
+sidebar_label: Criando um Chatbot
 ---
 
 ## IBM Cloud
