@@ -1,13 +1,72 @@
 ---
 id: doc3
-title: This is document number 3
+title: React Native
+sidebar_label: Montando o ambiente de desenvolvimento
 ---
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ac euismod odio, eu consequat dui. Nullam molestie consectetur risus id imperdiet. Proin sodales ornare turpis, non mollis massa ultricies id. Nam at nibh scelerisque, feugiat ante non, dapibus tortor. Vivamus volutpat diam quis tellus elementum bibendum. Praesent semper gravida velit quis aliquam. Etiam in cursus neque. Nam lectus ligula, malesuada et mauris a, bibendum faucibus mi. Phasellus ut interdum felis. Phasellus in odio pulvinar, porttitor urna eget, fringilla lectus. Aliquam sollicitudin est eros. Mauris consectetur quam vitae mauris interdum hendrerit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
-Duis et egestas libero, imperdiet faucibus ipsum. Sed posuere eget urna vel feugiat. Vivamus a arcu sagittis, fermentum urna dapibus, congue lectus. Fusce vulputate porttitor nisl, ac cursus elit volutpat vitae. Nullam vitae ipsum egestas, convallis quam non, porta nibh. Morbi gravida erat nec neque bibendum, eu pellentesque velit posuere. Fusce aliquam erat eu massa eleifend tristique.
+## React Native
 
-Sed consequat sollicitudin ipsum eget tempus. Integer a aliquet velit. In justo nibh, pellentesque non suscipit eget, gravida vel lacus. Donec odio ante, malesuada in massa quis, pharetra tristique ligula. Donec eros est, tristique eget finibus quis, semper non nisl. Vivamus et elit nec enim ornare placerat. Sed posuere odio a elit cursus sagittis.
+O React Native é um framework baseado no já aclamado React, desenvolvido pela equipe do Facebook, que possibilita o desenvolvimento de aplicações mobile, tanto para Android, como para iOS, utilizando apenas Javascript.
 
-Phasellus feugiat purus eu tortor ultrices finibus. Ut libero nibh, lobortis et libero nec, dapibus posuere eros. Sed sagittis euismod justo at consectetur. Nulla finibus libero placerat, cursus sapien at, eleifend ligula. Vivamus elit nisl, hendrerit ac nibh eu, ultrices tempus dui. Nam tellus neque, commodo non rhoncus eu, gravida in risus. Nullam id iaculis tortor.
+![image](https://user-images.githubusercontent.com/30981427/58473743-c6282600-811f-11e9-8d48-5317aaa8340f.png)
 
-Nullam at odio in sem varius tempor sit amet vel lorem. Etiam eu hendrerit nisl. Fusce nibh mauris, vulputate sit amet ex vitae, congue rhoncus nisl. Sed eget tellus purus. Nullam tempus commodo erat ut tristique. Cras accumsan massa sit amet justo consequat eleifend. Integer scelerisque vitae tellus id consectetur.
+### Como desenvolver com React Native?
+
+Para começar usar o react native, precisará instalar algumas dependências. São elas:
+
+* Node
+* React Native CLI
+* Python2
+* JDK8
+* SDK do Android
+
+### Instalação de dependências
+
+Para instalar o Node, Python2 e JDK8, execute o comando:
+
+```
+choco install -y nodejs.install python2 jdk8 
+```
+
+> caso vocẽ não tenha o chocolatey acesse [https://chocolatey.org/](https://chocolatey.org/)
+
+Para instalar o React Native CLI execute o comando:
+
+```
+npm install -g react-native-cli
+```
+
+### Ambiente de desenvolvimento Android
+
+Configurar seu ambiente de desenvolvimento pode ser um pouco entediante se você for novo no desenvolvimento do Android. Se você já está familiarizado com o desenvolvimento do Android, há algumas coisas que você pode precisar configurar. Em ambos os casos, certifique-se de seguir cuidadosamente as próximas etapas.
+
+1. Instale o Android Studio
+
+Faça o download e instale o Android Studio . Escolha uma configuração "Personalizada" quando solicitado a selecionar um tipo de instalação. Verifique se as caixas ao lado de todos os itens a seguir estão marcadas:
+
+- Android SDK
+- Android SDK Platform
+- Android Virtual Device
+
+Em seguida, clique em "Next" para instalar todos esses componentes.
+
+Quando a configuração for finalizada e você for apresentado à tela de boas-vindas, vá para a próxima etapa.
+
+2. Instale o SDK do Android
+O Android Studio instala o SDK do Android mais recente por padrão. Construir um aplicativo React Native com código nativo, no entanto, requer o Android 9 (Pie)SDK em particular. SDKs adicionais para Android podem ser instalados por meio do SDK Manager no Android Studio.
+
+O SDK Manager pode ser acessado na tela "Bem-vindo ao Android Studio". Clique em "Configurar" e selecione "SDK Manager".
+
+Selecione a guia "Plataformas do SDK" no Gerenciador do SDK e marque a caixa ao lado de "Mostrar detalhes do pacote" no canto inferior direito. Procure e expanda a Android 9 (Pie)entrada e verifique se os seguintes itens estão marcados:
+
+- Android SDK Platform 28
+- Intel x86 Atom_64 System Image ou Google APIs Intel x86 Atom System Image
+
+Em seguida, selecione a guia "Ferramentas do SDK" e marque a caixa ao lado de "Mostrar detalhes do pacote" aqui também. Procure e expanda a entrada "Android SDK Build-Tools" e verifique se ela 28.0.3está selecionada.
+
+Por fim, clique em "Aplicar" para baixar e instalar o Android SDK e as ferramentas de criação relacionadas.
+
+3. Configure a variável de ambiente ANDROID_HOME
+As ferramentas React Native exigem que algumas variáveis ​​de ambiente sejam configuradas para criar aplicativos com código nativo.
+
+Adicione as seguintes linhas ao seu ```$HOME/.bash_profile``` arquivo de configuração:
