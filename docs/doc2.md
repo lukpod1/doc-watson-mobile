@@ -181,8 +181,7 @@ app.use(bodyParser.json());
 const port = 3000;
 
 const assistant = new AssistantV1({
-  username: '<username>',
-  password: '<password>',
+  iam_apikey: '<iam_apikey>',
   url: 'https://gateway.watsonplatform.net/assistant/api/',
   version: '2018-02-16',
 });
